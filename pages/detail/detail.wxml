@@ -1,0 +1,67 @@
+<!--pages/detail/detail.wxml-->
+<wxs src="../comm.wxs" module="comm" />
+<van-notify id="van-notify" />
+<view>
+  <image wx:if="{{ list.image }}" class="det-image" src="{{ comm.baseUrl + list.image }}" mode=""/>
+  <view class="det-title">
+    <text>{{ list.name }}</text>
+    <text class="det-title-price">￥{{ list.price }}</text>
+  </view>
+  <view class="det-dsc">
+    <van-icon name="shop-o" /><text>{{ list.production }}</text>
+    <view>药品描述</view>
+    <text>{{ list.dscp }}</text>
+
+  </view>
+  
+  <van-goods-action>
+    <van-goods-action-icon
+      icon="star"
+      text="收藏"
+      bind:click="removecollect"
+      data-id="{{list.id}}"
+      wx:if="{{collectState}}"
+    />
+    <van-goods-action-icon
+      icon="star-o"
+      text="收藏"
+      bind:click="collect"
+      data-id="{{list.id}}"
+      wx:else
+    />
+    <van-goods-action-icon
+      icon="cart-o"
+      text="购物车"
+      bind:click="goToCart"
+      data-list="{{list}}"
+      info="{{cartPnum}}"
+    />
+
+    <view class="btn-group">
+      <van-button
+        class="btn-cart"
+        color="#edd140"
+        bind:click="addToCart"
+        size="large"
+      >加入购物车</van-button>
+      <van-button
+        class="btn-cart"
+        color="#167f7b"
+        bind:click="onClickButton"
+        size="large"
+      >购买</van-button>
+    </view>
+    
+    <!-- <van-goods-action-button
+      text="加入购物车"
+      type="warning"
+      bind:click="onClickButton"
+    />
+    <van-goods-action-button
+      text="立即购买"
+      type="primary"
+      bind:click="onClickButton"
+    /> -->
+  </van-goods-action>
+</view>
+<van-notify id="van-notify" />

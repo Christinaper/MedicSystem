@@ -1,0 +1,37 @@
+<!--pages/category/category.wxml-->
+<wxs src="../comm.wxs" module="comm">
+  
+</wxs>
+<wxs module="wxs">
+  // 这里的代码隶属于服务于"wxml", 这里导出的东西, 可以在{{}}中被使用,
+  // 且每个wxml模块都是一个孤立的模块要用module.export向外导东西
+  // 这里的代码不能访问JS中的数据和方法, 所以需要调用者传参递进来
+  module.exports.avatar = function(list, id) {
+    if(id === 0) return "";
+    for(var i = 0; i < list.length; i++) {
+      if(list[i].id === id) return list[i].avatar;
+    }
+    return "";
+  }
+</wxs>
+<view class="container">
+  <view class="left">
+    <view bind:tap="toggleId" data-id="{{item.id}}" wx:for="{{ listMain }}" class="list-main-item" wx:key="id">
+      <text class="{{ item.id === activeId ? 'active' : '' }}">{{ item.name }}</text>
+    </view>
+  </view>
+  <view class="right">
+    <view class="right-card" wx:for="{{ listSub }}" wx:key="id">
+      <view class="r-c-img" bind:tap="goToDetail" data-id="{{ item.id }}">
+        <image src="{{ comm.baseUrl + item.image }}" mode=""/>
+      </view>
+      <view class="r-c-info">
+        <view>{{ item.name }}</view>
+        <view class="r-c-info-dscp">{{ item.dscp }}</view>
+        <view>
+          <view class="r-c-info-price">￥{{ item.price }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

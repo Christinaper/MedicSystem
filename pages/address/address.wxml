@@ -1,0 +1,18 @@
+<!--pages/address/address.wxml-->
+<van-notify id="van-notify" />
+
+<van-button icon="add-o" type="info" size="small" block plain bind:tap="goToAdd">新增</van-button>
+
+<van-swipe-cell right-width="{{ 100 }}" left-width="{{ 0.1 }}" wx:for="{{ UserAddressList }}" wx:key="id">
+  <van-cell-group>
+    <van-cell 
+      title="{{ item.receiverName + '-' + item.receiverPhone }}"
+      value="{{ item.province + '-' + item.city + '-' + item.area + '-' + item.addr }}" 
+      data-id="{{ item.id }}"
+      bind:tap="goToCart"
+    />
+  </van-cell-group>
+  <view slot="right">
+    <van-tag type="warning" size="large" bind:tap="edit" data-id="{{ item.id }}">修改</van-tag>
+  </view>
+</van-swipe-cell>

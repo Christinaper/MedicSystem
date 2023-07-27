@@ -1,0 +1,74 @@
+<!--pages/profile/profile.wxml-->
+<wxs src="../comm.wxs" module="comm" />
+<view class="top-container">
+  <image class="avatar" src="{{ comm.baseUrl + info.avatar }}" mode="" wx:if="{{info.avatar}}" />
+  <image class="avatar" src="../../assets/static/avatar.jpg" mode="" wx:else />
+  <view class="card"></view>
+</view>
+<view class="info-container">
+  <view class="info-login" wx:if="{{info.avatar}}">
+    <view class="info-text">{{info.nickname}}</view>
+    <view class="info-msg">上面是我的昵称</view>
+  </view>
+  <view class="info-login" wx:else>
+    <view class="info-text">请登录</view>
+    <view class="info-msg">您还未登录，登录享更多权益...</view>
+  </view>
+</view>
+<view class="main-cell">
+  <view class="main-cell-item" bindtap="toOrder">
+    <van-icon name="logistics" color="#a7bbdf" size="40rpx" />
+    <text>订单</text>
+  </view>
+  <view class="main-cell-item" bindtap="toCollect" data-id="1">
+    <van-icon name="todo-list-o" color="#a7bbdf" size="40rpx" />
+    <text>足迹</text>
+  </view>
+  <view class="main-cell-item" bindtap="toCollect" data-id="2">
+    <van-icon name="goods-collect-o" color="#a7bbdf" size="40rpx" />
+    <text>收藏</text>
+  </view>
+  <view class="main-cell-item" bindtap="toAddress">
+    <van-icon name="location-o" color="#a7bbdf" size="40rpx" />
+    <text>地址</text>
+  </view>
+</view>
+<van-button icon="flag-o" round color="#5f8479" class="login-btn" bindtap="showLoginDialog">登录</van-button>
+
+<!-- <van-cell
+  is-link
+  title="联系客服"
+  link-type="navigateTo"
+  url="/pages/dashboard/index"
+/> -->
+<!-- <van-cell
+  is-link
+  title="退出登录"
+  link-type="navigateTo"
+  bindtap="showLogoutDialog"
+  wx:if="{{info.avatar}}"
+/> -->
+<!-- <van-cell
+<!-- 添加对话框组件 -->
+<van-dialog
+  show-cancel-button
+  id="logoutDialog"
+  show="{{ showOutDialog }}"
+  title="退出登录"
+  message="确定要退出登录吗？"
+  confirm-button-text="确定"
+  cancel-button-text="取消"
+  bind:confirm="logout"
+  bind:cancel="hideLogoutDialog"
+/>
+<van-dialog
+  show-cancel-button
+  id="loginDialog"
+  show="{{ showInDialog }}"
+  title="登录"
+  message="登录？"
+  confirm-button-text="确定"
+  cancel-button-text="取消"
+  bind:confirm="loginConfirm"
+  bind:cancel="hideLogoutDialog"
+/>

@@ -1,0 +1,12 @@
+<!--pages/address/order/order.wxml-->
+<wxs src="../comm.wxs" module="comm" />
+<van-panel title="正品医药，放心选购" status="免运费：￥{{item.amount}}" wx:for="{{orderList}}" desc="{{item.createTime}}" wx:key="id" use-footer-slot>
+  <view class="pimg-container">
+    <view wx:for="{{item.orderDetails}}">
+      <image class="pimg" src="{{comm.baseUrl + item.productImage}}" bind:tap="goToDetail" data-id="{{ item.productId }}" mode=""/>
+    </view>
+  </view>
+  <view slot="footer">
+    <van-button size="small" block bind:tap="cancelOrder" data-oid="{{item.id}}">取消订单</van-button>
+  </view>
+</van-panel>

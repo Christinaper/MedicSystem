@@ -1,0 +1,10 @@
+/* pages/address/order/order.wxss */
+.pimg-container {
+  display: flex;
+  overflow-x: scroll;
+}
+.pimg {
+  width: 200rpx;
+  height: 200rpx;
+  padding: 5rpx 20rpx;
+}

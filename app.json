@@ -1,0 +1,95 @@
+{
+  "entryPagePath": "pages/home/home",
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/cart/cart",
+    "pages/category/category",
+    "pages/profile/profile",
+    "pages/address/address",
+    "pages/address/edit/edit",
+    "pages/login/login",
+    "pages/address/add/add",
+    "pages/detail/detail",
+    "pages/collect/collect",
+    "pages/order/order",
+    "pages/home/search/search"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#eaf2f9",
+    "navigationBarTitleText": "Drug",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#a18661",
+    "backgroundColor": "#eaf2f9",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/assets/icons/home.png",
+        "selectedIconPath": "/assets/icons/home_SL.png"
+      },
+      {
+        "pagePath": "pages/category/category",
+        "text": "分类",
+        "iconPath": "/assets/icons/category.png",
+        "selectedIconPath": "/assets/icons/category_SL.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "/assets/icons/cart.png",
+        "selectedIconPath": "/assets/icons/cart_SL.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "/assets/icons/profile.png",
+        "selectedIconPath": "/assets/icons/profile_SL.png"
+      }
+    ]
+  },
+  "plugins": {
+    "citySelector": {
+      "version": "1.0.2",
+      "provider": "wx63ffb7b7894e99ae"
+    }
+  },
+  "permission": {
+    "scope.userFuzzyLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "globalStyle": {
+    "fontFamily": "DingTalk JinBuTi"
+  },
+  "usingComponents": {
+    "van-button": "vant-weapp/button",
+    "van-field": "vant-weapp/field",
+    "van-icon": "vant-weapp/icon",
+    "van-search": "vant-weapp/search",
+    "van-cell": "vant-weapp/cell",
+    "van-cell-group": "vant-weapp/cell-group",
+    "van-swipe-cell": "vant-weapp/swipe-cell",
+    "van-tag": "vant-weapp/tag",
+    "van-picker": "vant-weapp/picker",
+    "van-popup": "vant-weapp/popup",
+    "van-notify": "vant-weapp/notify",
+    "van-goods-action": "vant-weapp/goods-action",
+    "van-goods-action-icon": "vant-weapp/goods-action-icon",
+    "van-goods-action-button": "vant-weapp/goods-action-button",
+    "van-card": "vant-weapp/card",
+    "van-submit-bar": "vant-weapp/submit-bar",
+    "van-panel": "vant-weapp/panel",
+    "van-badge": "vant-weapp/badge",
+    "van-nav-bar": "vant-weapp/nav-bar",
+    "van-dialog": "vant-weapp/dialog",
+    "van-stepper": "vant-weapp/stepper"
+  }
+}

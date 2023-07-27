@@ -1,0 +1,69 @@
+/* pages/category/category.wxss */
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.left {
+  flex-shrink: 0;
+  /* rpx表示的是小程序专用的相对长度单位 */
+  /* rpx表示的是相对于750设计稿的屏幕宽度的标识 */
+  width: 200rpx;
+}
+.list-main-item {
+  padding: 20rpx 0;
+}
+.list-main-item text {
+  display: block;
+  width: 70%;
+  height: 40rpx;
+  margin: 0 auto;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+}
+.list-main-item text.active {
+  background-color: #167f7b;
+  color: #fff;
+}
+.right {
+  flex-grow: 1;
+  border-left: 1rpx solid #efeff0;
+  overflow: auto;
+}
+.right-card {
+  display: flex;
+  height: 200rpx;
+  padding: 10rpx;
+  box-sizing: border-box;
+}
+.r-c-img {
+  flex-grow: 1;
+}
+.r-c-info {
+  flex-grow: 1.2;
+  padding: 10rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.r-c-info-dscp {
+  color: #8994aa;
+  display: -webkit-box; /* 将文本显示为弹性盒子 */
+  -webkit-line-clamp: 2; /* 设置最大显示行数为2行 */
+  -webkit-box-orient: vertical; /* 设置文本排列方向为垂直方向 */
+  font-size: 22rpx;
+  line-height: 1.4; /* 行高，根据字体大小适当调整 */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.r-c-info-price {
+  font-weight: 600;
+  color: #5f8479;
+}
+.right image {
+  width: 200rpx;
+  height: 100%;
+}

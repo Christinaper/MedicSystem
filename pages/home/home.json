@@ -1,0 +1,9 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents":{
+    "l-button":"/miniprogram_npm/lin-ui/button/index",
+    "l-grid": "/miniprogram_npm/lin-ui/grid/index",
+    "l-grid-item": "/miniprogram_npm/lin-ui/grid-item/index",
+    "l-notice-bar": "/miniprogram_npm/lin-ui/notice-bar/index"
+  }
+}

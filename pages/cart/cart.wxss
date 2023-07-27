@@ -1,0 +1,66 @@
+/* pages/cart/cart.wxss */
+.navbar {
+  height: 200rpx;
+  line-height: 200rpx;
+  font-size: 25rpx;
+  padding: 50rpx 20rpx 0 20rpx;
+  box-sizing: border-box;
+  display: flex;
+}
+.location-text {
+  display: inline-block; /* 或者 inline-flex */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 400rpx; /* 文字超出时显示省略号 */
+  margin: 0 8rpx;
+}
+.van-submit-bar__button {
+  width: auto !important;
+}
+.van-stepper__minus, .van-stepper__plus {
+  background-color: #fff !important;
+  border: 2px solid #f3f3f3 !important;
+  box-sizing: border-box;
+}
+.van-stepper__input { 
+  background-color: #fff !important; 
+}
+/* 1 : 1.5 : 1.2 */
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40rpx 20rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+.card-img {
+  flex-grow: 1; /* 使用flex属性，子元素将按比例缩放 */
+}
+.card-img image {
+  width: 150rpx;
+  height: 150rpx;
+}
+.card-info {
+  flex-grow: 1.5; /* 使用flex属性，子元素将按比例缩放 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 30rpx;
+  flex-grow: 1;
+  padding: 10rpx 20rpx;
+}
+.card-info-name {
+  font-weight: 600;
+}
+.card-info-production {
+  color: #7b8087;
+  font-size: 25rpx;
+}
+.card-info-price {
+  font-weight: 600;
+}
+.card-step {
+  flex-grow: 1.2;
+  align-self: center;
+}

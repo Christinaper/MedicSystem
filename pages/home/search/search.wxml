@@ -1,0 +1,8 @@
+<!--pages/home/search/search.wxml-->
+<view>
+  <van-search value="{{ value }}" placeholder="请输入搜索关键词" background="#eaf2f9" bind:search="onSearch" />
+</view>
+<van-cell-group>
+  <van-cell wx:for="{{searchList}}" title="{{item.name}}" bind:tap="goToDetail" data-id="{{ item.id }}"
+  />
+</van-cell-group>

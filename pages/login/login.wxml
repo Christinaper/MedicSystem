@@ -1,0 +1,6 @@
+<!--pages/login/login.wxml-->
+<van-cell-group class="form-container">
+  <input type="text" value="{{ model.username }}" placeholder="请输入用户名" bind:input="onInputUsername" />
+  <input type="password" value="{{ model.password }}" placeholder="请输入密码" bind:input="onInputPassword" />
+  <van-button type="info" block bind:tap="login" color="#5f8479">登录</van-button>
+</van-cell-group>

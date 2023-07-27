@@ -1,0 +1,47 @@
+<!--pages/cart/cart.wxml-->
+<wxs src="../comm.wxs" module="comm" />
+<view class="navbar" bindtap="toAddress">
+  <van-icon name="location" color="#5f8378" size="40rpx" />
+  <text class="location-text" wx:if="{{addressId}}">{{addressList.city + '-' + addressList.area + '-' + addressList.addr}}</text>
+  <text class="location-text" wx:else>请选择收货地址</text>
+  <van-icon name="arrow" size="22rpx" />
+</view>
+<view class="card-container" wx:for="{{cartList}}" wx:key="{{item.id}}">
+  <view class="card-img">
+    <image src="{{comm.baseUrl + item.productImage}}" mode=""/>
+  </view>
+  <view class="card-info">
+    <text class="card-info-name">{{item.productName}}</text>
+    <text class="card-info-production">{{item.productProduction}}</text>
+    <text class="card-info-price">￥{{item.productPrice}}</text>
+  </view>
+  <view class="card-step">
+    <van-stepper value="{{ item.productCount }}" bind:plus="add" bind:minus="minus" data-num="{{item.productCount}}" data-id="{{item.id}}" />
+  </view>
+</view>
+
+<!-- 购物车id + 地址addressId -->
+<van-submit-bar
+  disabled
+  price="{{ amount }}"
+  button-text="提交订单"
+  tip="请先选择收货地址"
+  tip-icon="info-o"
+  bind:submit="onSubmit"
+  wx:if="{{!addressId}}"
+/>
+<van-submit-bar
+  disabled
+  price="{{ amount }}"
+  button-text="提交订单"
+  tip="请先选择商品"
+  tip-icon="info-o"
+  bind:submit="onSubmit"
+  wx:elif="{{!amount}}"
+/>
+<van-submit-bar
+  price="{{ amount }}"
+  button-text="提交订单"
+  bind:submit="onOrder"
+  wx:else
+/>

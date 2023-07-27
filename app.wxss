@@ -1,0 +1,8 @@
+/**app.wxss**/
+@import "stylesheet.wxss";
+/* globalStyle { font-family: "DingTalk JinBuTi"; } */
+page {
+  width: 100%;
+  height: 100%;
+  background-color: #eaf2f9;
+}

@@ -1,0 +1,11 @@
+<!--pages/collect/collect.wxml-->
+<wxs src="../comm.wxs" module="comm" />
+<!-- <view>23</view> -->
+<van-card
+  wx:for="{{list}}"
+  wx:key="id"
+  price="{{item.product.price}}"
+  desc="{{item.product.dscp}}"
+  title="{{item.product.name}}"
+  thumb="{{ comm.baseUrl + item.product.image }}"
+/>

@@ -1,0 +1,40 @@
+<!--pages/home/home.wxml-->
+<view class="page-header">
+    <text class="page-header-title">Health</text>
+    <text class="page-header-avatar">
+      <wxs src="../comm.wxs" module="comm" />
+      <image src="{{ comm.baseUrl + avatar }}" class="avatar" mode="" />
+    </text>
+</view>
+<!-- <view class="introduction">
+  <view>富贵荣华何足论，</view><view>日与月兮比长短。</view><view>人生苦短须及时，</view><view>莫待明朝把药尝。</view>
+  <text>欢迎使用药药购买药品！我们致力于为您提供优质的药品和服务。</text>
+</view> -->
+<view class="container">
+  <view class="page-body">
+    <van-search value="{{ value }}" placeholder="请输入搜索关键词" background="#eaf2f9" bind:focus="goToSearch" />
+    <wxs src="../comm.wxs" module="comm" />
+    <!-- <view class="page-section page-section-spacing swiper">
+      <swiper indicator-dots="{{indicatorDots}}"
+        autoplay="{{autoplay}}">
+        <block wx:for="{{background}}" wx:key="*this">
+          <swiper-item>
+            <view class="image">
+              <image class="swiper-item" src="{{ comm.baseUrl + item }}" class='in-image' />
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view> -->
+    <view wx:for="{{ recommend }}" wx:key="id">
+      <view class="rec-title">{{ item.categoryName }}</view>
+      <!-- <l-notice-bar type="still" front-icon-name="right">{{ item.categoryName }}</l-notice-bar> -->
+      <l-grid l-class="grid" row-num="2" show-border="true">
+        <l-grid-item 
+          wx:for="{{item.recommendInfos}}" wx:key="id" key="{{index}}" slot="{{index}}">
+            <image bind:tap="goToDetail" data-id="{{ item.productId }}" src="{{ comm.baseUrl + item.productImage }}" alt="" class="product-img" />
+        </l-grid-item>
+      </l-grid>
+    </view>
+  </view>
+</view>
